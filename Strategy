@@ -1,0 +1,11 @@
+//Strategy week 3
+interface Payment { void pay(); }
+
+class UpiPayment implements Payment { public void pay() { System.out.println("Paid by UPI"); } }
+class CardPayment implements Payment { public void pay() { System.out.println("Paid by Card"); } }
+
+class PaymentContext {
+    private Payment payment;
+    public PaymentContext(Payment payment) { this.payment = payment; }
+    public void execute() { payment.pay(); }
+}
