@@ -1,0 +1,20 @@
+//Builder_week3
+class User {
+    private String name;
+    private int age;
+
+    static class Builder {
+        private String name;
+        private int age;
+
+        Builder name(String name) { this.name = name; return this; }
+        Builder age(int age) { this.age = age; return this; }
+
+        User build() {
+            User u = new User();
+            u.name = name;
+            u.age = age;
+            return u;
+        }
+    }
+}
