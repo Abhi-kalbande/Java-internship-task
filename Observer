@@ -1,0 +1,16 @@
+//Observer week 3
+
+interface Observer { void update(String msg); }
+interface Subject { void add(Observer o); void notifyObservers(String msg); }
+
+class Channel implements Subject {
+    private List<Observer> subs = new ArrayList<>();
+    public void add(Observer o) { subs.add(o); }
+    public void notifyObservers(String msg) { for (Observer o : subs) o.update(msg); }
+}
+
+class Subscriber implements Observer {
+    private String name;
+    Subscriber(String name) { this.name = name; }
+    public void update(String msg) { System.out.println(name + " got: " + msg); }
+}
