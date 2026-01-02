@@ -1,2 +1,2 @@
 # Java-internship-task
-I am starting the 6 moth java internship and this task i during my internship.
+I am starting the 6 moth java internship and i do this task during my internship.
