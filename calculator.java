@@ -18,6 +18,7 @@ public class Calculator {
             case '/': result = (num2 != 0) ? num1 / num2 : Double.NaN; break;
             default: System.out.println("Invalid operator."); return;
         }
+
         System.out.println("Result: " + result);
     }
 }
