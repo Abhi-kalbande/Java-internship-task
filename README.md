@@ -1,2 +1,3 @@
 # Java-internship-task
 I am starting the 6 moth java internship and i do this task during my internship.
+I finished my 6 months java internship...
