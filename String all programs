@@ -1,1 +1,71 @@
+import java.util.Arrays;
+import java.util.Scanner;
 
+public class AllStringOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input gathering
+        System.out.print("Enter the primary string: ");
+        String str1 = scanner.nextLine();
+
+        System.out.print("Enter a second string for comparison/joining: ");
+        String str2 = scanner.nextLine();
+
+        System.out.println("\n=== 1. BASIC INFORMATION ===");
+        // length() returns total character count
+        System.out.println("Length of String 1: " + str1.length());
+        // isEmpty() checks if length is 0
+        System.out.println("Is String 1 empty?: " + str1.isEmpty()); 
+
+        System.out.println("\n=== 2. CHARACTER ACCESS ===");
+        if (!str1.isEmpty()) {
+            // charAt() fetches character at a specific index
+            System.out.println("Character at index 0: " + str1.charAt(0));
+        }
+        // indexOf() finds the first position of a character or substring
+        System.out.println("Index of 'a' in String 1: " + str1.indexOf('a'));
+
+        System.out.println("\n=== 3. CASE MANIPULATION ===");
+        // toUpperCase() and toLowerCase() modify casing
+        System.out.println("Uppercase: " + str1.toUpperCase());
+        System.out.println("Lowercase: " + str1.toLowerCase());
+
+        System.out.println("\n=== 4. COMPARISONS ===");
+        // equals() checks exact match; equalsIgnoreCase() ignores case differences
+        System.out.println("Exact match comparison (equals): " + str1.equals(str2));
+        System.out.println("Case-insensitive match (equalsIgnoreCase): " + str1.equalsIgnoreCase(str2));
+        // compareTo() checks lexicographical order (returns 0 if identical)
+        System.out.println("Lexicographical comparison (compareTo): " + str1.compareTo(str2));
+
+        System.out.println("\n=== 5. MODIFICATIONS & SUBSTRINGS ===");
+        // concat() joins strings together
+        System.out.println("Concatenated string: " + str1.concat(str2));
+        // replace() changes targeted characters
+        System.out.println("Replace 'a' with 'X': " + str1.replace('a', 'X'));
+        // trim() deletes leading and trailing spaces
+        System.out.println("Trimmed version: '" + str1.trim() + "'");
+        
+        if (str1.length() >= 4) {
+            // substring(start, end) extracts parts of the string
+            System.out.println("Substring from index 1 to 4: " + str1.substring(1, 4));
+        }
+
+        System.out.println("\n=== 6. SEARCH & VALIDATION ===");
+        // contains() verifies presence of substrings
+        System.out.println("Contains 'java'?: " + str1.contains("java"));
+        // startsWith() and endsWith() validate string boundaries
+        System.out.println("Starts with 'A'?: " + str1.startsWith("A"));
+        System.out.println("Ends with 'g'?: " + str1.endsWith("g"));
+
+        System.out.println("\n=== 7. CONVERSIONS (ADVANCED) ===");
+        // split() divides a string into an array based on a regular expression separator
+        String[] words = str1.split(" ");
+        System.out.println("Split by spaces (Word Array): " + Arrays.toString(words));
+        // toCharArray() breaks down string into a primitive char array
+        char[] charArray = str1.toCharArray();
+        System.out.println("Converted to Character Array: " + Arrays.toString(charArray));
+
+        scanner.close();
+    }
+}
